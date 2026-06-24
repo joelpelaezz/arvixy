@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/design/web/code.html" }
+    { "source": "/", "destination": "/design/web/code" }
   ],
   "headers": [
     {

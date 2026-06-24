@@ -26,8 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     );
 
     return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('[submit]', err);
-    return res.status(500).json({ error: 'Error al guardar la consulta' });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[submit]', msg);
+    return res.status(500).json({ error: 'Error al guardar la consulta', detail: msg });
   }
 }

@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { query } from '../_lib/db.js';
+import { query } from '../_lib/db';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'PUT') {
     // Auth via cookie
     const cookie = req.headers.cookie ?? null;
-    const { getSession } = await import('../_lib/auth.js');
+    const { getSession } = await import('../_lib/auth');
     if (!getSession(cookie)) {
       return res.status(401).json({ error: 'Unauthorized' });
     }

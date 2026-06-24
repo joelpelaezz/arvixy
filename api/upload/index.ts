@@ -14,7 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Auth
   const cookie = req.headers.cookie ?? null;
-    const { getSession } = await import('../_lib/auth.js');
+    const { getSession } = await import('../_lib/auth');
   if (!getSession(cookie)) {
     return res.status(401).json({ error: 'Unauthorized' });
   }

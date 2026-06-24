@@ -1,0 +1,433 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Arvixy | Ingeniería de Software y Automatización Estratégica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#131b2e",
+                    "secondary-container": "#57dffe",
+                    "inverse-primary": "#bec6e0",
+                    "on-secondary-container": "#006172",
+                    "background": "#f7f9fb",
+                    "on-tertiary-fixed-variant": "#3a485c",
+                    "on-secondary-fixed": "#001f26",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-container": "#76859b",
+                    "secondary": "#00687a",
+                    "surface-tint": "#565e74",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "on-surface-variant": "#45464d",
+                    "on-primary-container": "#7c839b",
+                    "secondary-fixed": "#acedff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "primary": "#000000",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "outline": "#76777d",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c6c6cd",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#0d1c2f",
+                    "surface-container-low": "#f2f4f6",
+                    "primary-fixed": "#dae2fd",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary-fixed": "#0d1c2f",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed": "#d5e3fd",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "surface-container": "#eceef0",
+                    "primary-container": "#131b2e",
+                    "tertiary-fixed-dim": "#b9c7e0",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-highest": "#e0e3e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f7f9fb; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(241, 245, 249, 0.5); }
+        .cyan-glow:focus-within { box-shadow: 0 0 15px rgba(87, 223, 254, 0.4); border-color: #57dffe; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Arvixy Logo" class="h-10 w-auto" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">
+                Arvixy
+            </div>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all" href="#soluciones">Soluciones</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all" href="#valor">Valor</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all" href="#contacto">Contacto</a>
+
+</div>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden min-h-[85vh] flex items-center px-gutter transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background to-background"></div>
+</div>
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-xl items-center relative z-10 py-xl">
+<div class="space-y-md">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container/15 text-on-secondary-container border border-secondary-container/25">
+<span class="material-symbols-outlined text-sm mr-2" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+<span class="font-label-md text-label-md uppercase tracking-widest font-semibold">Eficiencia Empresarial</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[68px] md:leading-[1.05] text-primary">
+                    Transforma tu <span class="text-secondary">potencial operativo</span> con tecnología inteligente
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    En Arvixy no creamos solo código. Diseñamos ecosistemas de software y automatización que eliminan la fricción operativa y escalan tu negocio hacia nuevos horizontes de rentabilidad.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md pt-md">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-sm flex items-center justify-center hover:bg-secondary transition-all active:scale-95 shadow-xl shadow-primary/5" href="#contacto">
+                        Solicitar Consulta
+                        <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl relative border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="Futuristic high-tech operation center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABNmCdwHMu9XjUZcs9z5XfBS3hA3623pjVb4w4jmbbbaCihdxpMpJehaAlzERntENYfcq7aCtU5-YWj083zsQVIWEc1ZV7vTeWn2V-5h8Jag-FI_Sy7UasFWD_mNDAcDxwwVTO6dgRRDWwTtOgx-qlL3LZ4gzZm-V8NUCz_s4wwkrGLpfovHiLlhYw7J6XqvXYtCQKvV2VhEVSRDXRJAGfDrGQBI0DAMBQDCLMbB0VElNraj48imytxAZcOAq0uZuL9Bi_Z49GLsqh">
+<div class="absolute bottom-md left-md right-md">
+<div class="glass-card p-lg rounded-2xl shadow-2xl border border-white/40">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-md text-label-md text-secondary font-bold">MONITOREO ESTRATÉGICO</span>
+<span class="text-secondary material-symbols-outlined">analytics</span>
+</div>
+<div class="h-2.5 w-full bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[92%]"></div>
+</div>
+<p class="font-body-sm text-body-sm mt-3 text-on-surface-variant font-medium">Incremento en velocidad de despliegue: +92%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Soluciones (Bento Grid) -->
+<section class="py-xl px-gutter max-w-container-max mx-auto transition-all duration-1000 ease-out opacity-100 translate-y-0" id="soluciones">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-base">Soluciones de Ingeniería&nbsp;</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Arquitectura tecnológica sofisticada diseñada para mejorar operaciones y escalar sin límites.</p>
+</div>
+<div class="flex flex-col items-center gap-md">
+<!-- Service 1 & 3 en fila -->
+<div class="flex flex-col md:flex-row gap-md w-full justify-center">
+<!-- Service 1 -->
+<div class="group bg-surface-container-lowest p-lg lg:p-xl rounded-2xl border border-outline-variant/30 hover:border-secondary transition-all shadow-sm hover:shadow-xl flex flex-col justify-between max-w-96 w-full">
+<div>
+<div class="w-14 h-14 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Software de Grado Empresarial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Sistemas robustos que actúan como la columna vertebral de su crecimiento, optimizando cada punto de contacto operativo.</p>
+</div>
+<div class="mt-lg">
+<ul class="space-y-3 mb-md">
+<li class="flex items-center text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary mr-2 text-sm">check_circle</span>
+                            Arquitecturas de alta disponibilidad
+                        </li>
+<li class="flex items-center text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary mr-2 text-sm">check_circle</span>
+                            Integración nativa de datos
+                        </li>
+</ul>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group bg-surface-container-lowest p-lg lg:p-xl rounded-2xl border border-outline-variant/30 hover:border-secondary transition-all shadow-sm hover:shadow-xl flex flex-col justify-between max-w-96 w-full">
+<div>
+<div class="w-14 h-14 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">insights</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Consultoría de Transformación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Diagnóstico estratégico para identificar cuellos de botella y diseñar la hoja de ruta tecnológica que maximice su ROI.</p>
+</div>
+<div class="mt-lg">
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Valor Section -->
+<section class="py-xl bg-surface-container-low px-gutter transition-all duration-1000 ease-out opacity-100 translate-y-0" id="valor">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row items-center gap-xl">
+<div class="w-full lg:w-1/2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-lg">El Diferencial Arvixy</h2>
+<div class="space-y-lg">
+<!-- Benefit 1 -->
+<div class="flex gap-md group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Agilidad Operativa Radical</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Optimizamos flujos de trabajo complejos para reducir tiempos de ciclo, permitiendo una respuesta al mercado sin precedentes.</p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="flex gap-md group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Fiabilidad Determinística</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Implementamos protocolos de ingeniería que eliminan la variabilidad y el error humano, garantizando procesos impecables.</p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="flex gap-md group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined">auto_graph</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Escalabilidad Estructural</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Preparamos su infraestructura para el crecimiento masivo, asegurando que la tecnología sea el motor, no el freno, de su expansión.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="relative p-md">
+<div class="absolute -top-8 -left-8 w-80 h-80 bg-secondary-container/10 rounded-full blur-[100px]"></div>
+<div class="relative bg-white p-6 rounded-3xl shadow-2xl border border-outline-variant/20">
+<img class="rounded-2xl w-full aspect-video object-cover mb-lg shadow-inner" data-alt="Corporate professional collaboration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeKMAT2lkABwd_9bGvf6IcQ5w6immMll8JAEN9iS9uoMtKBO5akoUQTxinyufH55e-9VULEhuyCyHQ6aLJYXjmT1rKhwdFrLH_9SfyYWbJXIOVQvYVABR1yjhvcGx0uTn-2FRir5rQ8mOMxsjTNQq8qn997QQs2jf5PCmjaCKrH8CFsoefjWsOsPbKq4cCGF_13_OE-rmTPlOlkQco8z8MCEsUTOGn2JyHYczMnXuZYTD3LZ5CmVxyZhqLPpxD8OZB_VpJQM82mvlR">
+<div class="grid grid-cols-2 gap-lg">
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacto Section -->
+<section class="py-xl px-gutter max-w-container-max mx-auto transition-all duration-1000 ease-out opacity-100 translate-y-0" id="contacto">
+<div class="bg-primary rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/5">
+<div class="w-full md:w-1/2 p-lg lg:p-xl text-on-primary flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-md text-white">Inicie su fase de escalamiento</h2>
+<p class="font-body-lg text-body-lg text-white/70 mb-xl leading-relaxed">Estamos preparados para auditar su operación actual y proyectar el ahorro y la eficiencia que Arvixy puede inyectar en su organización.</p>
+<div class="space-y-lg">
+<div class="flex items-center gap-md group">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="font-body-md text-white/90">joelpelaezz@gmail.com</span>
+</div>
+<div class="flex items-center gap-md group">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="font-body-md text-white/90">Palpala , Jujuy , Argentina</span>
+</div>
+<div class="flex items-center gap-md group">
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed group-hover:bg-secondary transition-all">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="font-body-md text-white/90">+54 (388) 4729680</span>
+</div>
+</div>
+</div>
+
+</div>
+<div class="w-full md:w-1/2 bg-white p-lg lg:p-xl">
+<form id="contactForm" class="space-y-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant ml-1 font-bold">NOMBRE COMPLETO</label>
+<input id="cf-name" name="name" class="w-full px-5 py-4 rounded-xl border-outline-variant/30 focus:ring-0 focus:border-secondary transition-all cyan-glow bg-surface-container-lowest" placeholder="Ingrese su nombre" required="" type="text">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant ml-1 font-bold">EMAIL CORPORATIVO</label>
+<input id="cf-email" name="email" class="w-full px-5 py-4 rounded-xl border-outline-variant/30 focus:ring-0 focus:border-secondary transition-all cyan-glow bg-surface-container-lowest" placeholder="usuario@mail.com" required="" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant ml-1 font-bold">SOLUCIÓN DE INTERÉS</label>
+<select id="cf-type" name="project_type" class="w-full px-5 py-4 rounded-xl border-outline-variant/30 focus:ring-0 focus:border-secondary transition-all cyan-glow bg-surface-container-lowest appearance-none">
+<option>Software a Medida de Alto Nivel</option>
+<option>RPA &amp; Automatización Estratégica</option>
+<option>Consultoría en Transformación Digital</option>
+<option>Optimización de Ecosistemas Existentes</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant ml-1 font-bold">DESCRIPCIÓN DEL PROYECTO</label>
+<textarea id="cf-message" name="message" class="w-full px-5 py-4 rounded-xl border-outline-variant/30 focus:ring-0 focus:border-secondary transition-all cyan-glow resize-none bg-surface-container-lowest" placeholder="¿Cómo podemos ayudar a mejorar sus operaciones?" rows="4"></textarea>
+</div>
+<button id="cf-submit" class="w-full py-5 bg-primary text-on-primary rounded-xl font-headline-sm hover:bg-secondary transition-all active:scale-[0.98] shadow-lg shadow-primary/10 flex items-center justify-center gap-2" type="submit">
+                        Enviar Solicitud de Consultoría
+                        <span class="material-symbols-outlined text-xl">send</span>
+</button>
+</form>
+<div id="formSuccess" class="hidden text-center py-10">
+<span class="material-symbols-outlined text-5xl text-cyan mb-4">check_circle</span>
+<h3 class="font-display font-bold text-headline-md text-primary mb-2">Consulta enviada</h3>
+<p class="text-body-md text-on-surface-variant">Gracias. Un consultor senior de Arvixy se pondrá en contacto en menos de 24 horas.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl mt-xl bg-surface-container-highest border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl px-gutter max-w-container-max mx-auto">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-2 mb-md">
+<img alt="Arvixy" class="h-8 w-auto" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg">
+<div class="font-headline-sm text-headline-sm font-bold text-primary tracking-tighter">Arvixy</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Elevando los estándares de la ingeniería de software para impulsar la eficiencia operativa y el escalamiento global.</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-md uppercase tracking-[0.15em] font-bold">Ecosistema</h5>
+<div class="flex flex-col gap-sm">
+
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Casos de Éxito</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Blog de Ingeniería</a>
+</div>
+</div>
+
+
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-lg border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-md">
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // ── Form submission ──
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccess');
+        const submitBtn = document.getElementById('cf-submit');
+        if (form && submitBtn) {
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl animate-spin">progress_activity</span> Enviando…';
+
+            try {
+              const data = {
+                name: document.getElementById('cf-name').value,
+                email: document.getElementById('cf-email').value,
+                project_type: document.getElementById('cf-type').value,
+                message: document.getElementById('cf-message').value,
+              };
+              const res = await fetch('/api/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+              });
+              if (res.ok) {
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+              } else {
+                alert('Error al enviar. Por favor intentá de nuevo.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+              }
+            } catch {
+              alert('Error de conexión. Por favor intentá de nuevo.');
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalText;
+            }
+          });
+        }
+    });
+</script>
+
+
+
+
+
+
+</body></html>

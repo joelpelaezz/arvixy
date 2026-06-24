@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/design/web/code.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://arvixy.com" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ]
+}

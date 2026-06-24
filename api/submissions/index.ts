@@ -1,0 +1,33 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { query } from '../_lib/db';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Auth
+  const cookie = req.headers.cookie ?? null;
+  const { getSession } = await import('../_lib/auth');
+  if (!getSession(cookie)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  try {
+    const rows = await query<{
+      id: number;
+      name: string;
+      email: string;
+      company: string | null;
+      project_type: string | null;
+      message: string | null;
+      submitted_at: string;
+      read: boolean;
+    }>('SELECT * FROM form_submissions ORDER BY submitted_at DESC');
+
+    return res.status(200).json({ submissions: rows });
+  } catch (err) {
+    console.error('[submissions GET]', err);
+    return res.status(500).json({ error: 'Database error' });
+  }
+}

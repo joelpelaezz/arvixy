@@ -1,11 +1,10 @@
 import { Pool } from '@neondatabase/serverless';
-import type { VercelPool } from '@neondatabase/serverless';
 
-let pool: VercelPool | null = null;
+let pool: Pool | null = null;
 
-export function getPool(): VercelPool {
+function getPool(): Pool {
   if (!pool) {
-    pool = new Pool({ connectionString: process.env.POSTGRES_URL });
+    pool = new Pool({ connectionString: process.env.DATABASE_URL });
   }
   return pool;
 }
